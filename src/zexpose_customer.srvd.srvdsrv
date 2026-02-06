@@ -1,0 +1,4 @@
+@EndUserText.label: 'service definition for customer'
+define service Zexpose_customer {
+  expose zc_customert;
+}

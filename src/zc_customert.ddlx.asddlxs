@@ -1,0 +1,57 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Customer',
+    typeNamePlural: 'Customers',
+    title: { value: 'Name' },
+    description: { value: 'City' }
+}
+annotate entity zc_customert
+    with 
+{
+
+    @UI.facet: [{
+        
+        id: 'customerdetail',
+        purpose: #STANDARD,
+        position: 10 ,
+        label: 'Customer Details',
+        type: #IDENTIFICATION_REFERENCE
+        
+    }]
+    
+    @EndUserText.label: 'Customer ID'
+    @UI.lineItem: [{ position: 10 }]
+    @UI.identification: [{ position: 10 }]
+    CustomerUuid;
+    @EndUserText.label: 'Customer Name'
+    @UI.lineItem: [{ position: 20 }]
+    @UI.identification: [{ position: 20 }]
+    Name;
+    @EndUserText.label: 'City'
+    @UI.lineItem: [{ position: 30 }]
+    @UI.identification: [{ position: 30 }]
+    City;
+    @EndUserText.label: 'Country'
+    @UI.lineItem: [{ position: 40 }]
+    @UI.identification: [{ position: 40 }]
+    @Consumption.valueHelpDefinition: [{ entity : { name : 'ZH_COUNTRY_VH' , element : 'Country' } }]
+    Country;
+    @EndUserText.label: 'Email'
+    @UI.lineItem: [{ position: 50 }]
+    @UI.identification: [{ position: 50 }]
+    Email;
+    @EndUserText.label: 'Created At'
+    @UI.identification: [{ position: 60 }]
+    Createdat;
+    @EndUserText.label: 'Created By'
+    @UI.identification: [{ position: 70 }]
+    Createdby;
+    @EndUserText.label: 'Last Changed At'
+    @UI.identification: [{ position: 80 }]
+    Lastchangedat;
+    @EndUserText.label: 'Last Changed By'
+    @UI.identification: [{ position: 90 }]
+    Lastchangedby;
+    
+}
